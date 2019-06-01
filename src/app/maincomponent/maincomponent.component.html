@@ -1,0 +1,14 @@
+<p>
+  <input type="text" [(ngModel)]="textinput">
+  <button (click)="addComponent(textinput);">ADD</button>
+  <button (click)="undoComponent();">UNDO</button>
+  <!-- [disabled]="!bEnableUndobtn" -->
+  <button (click)="redoComponent();">REDO</button>
+</p>
+
+<div>
+  <div *ngFor="let item of nameArr.commandList; let itemNo = index;">
+    {{item}}
+    <button (click)="removeComponent(itemNo);" *ngIf="item != 'first'"> REMOVE</button>
+  </div>
+</div>
